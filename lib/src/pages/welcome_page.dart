@@ -55,7 +55,7 @@ class WelcomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0)
                     ),
                     color: Theme.of(context).accentColor,
-                    child: Text('Iniciar sesion', style: TextStyle(
+                    child: Text('Inicia sesion', style: TextStyle(
                       color: Colors.white,
                           fontSize: 15.0
                     )),
