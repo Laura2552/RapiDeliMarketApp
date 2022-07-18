@@ -65,7 +65,7 @@ class LoginPage extends StatelessWidget {
                             Navigator.pushNamed(context, 'forgot-password');
                           },
                           child: Text('¿Olvidaste tu contraseña?', style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.blue.shade700,
                               fontWeight: FontWeight.w400,
                               fontSize: 17.0
                           )),
