@@ -1,8 +1,7 @@
-//import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
-import 'package:rapideli_market_app/src/widgets/back_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/widgets/back_button.dart';
 
 class SignUpPage extends StatelessWidget {
   

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rapideli_market_app/tabs/explore_tab.dart';
-import 'package:rapideli_market_app/tabs/favourite_tab.dart';
-import 'package:rapideli_market_app/tabs/my_order_tab.dart';
-import 'package:rapideli_market_app/tabs/profile_tab.dart';
+import 'package:rapideli_market_app/src/features/presentation/tabs/explore_tab/View/explore_tab.dart';
+import 'package:rapideli_market_app/src/features/presentation/tabs/favourite_tab/View/favourite_tab.dart';
+import 'package:rapideli_market_app/src/features/presentation/tabs/my_order_tab/View/my_order_tab.dart';
+import 'package:rapideli_market_app/src/features/presentation/tabs/profile_tab/View/profile_tab.dart';
+
 
 class TabsPage extends StatefulWidget {
   TabsPage({Key key}) : super(key: key);
