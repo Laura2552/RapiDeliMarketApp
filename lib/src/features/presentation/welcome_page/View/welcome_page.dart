@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
 import 'package:rapideli_market_app/src/features/presentation/login_page/View/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -29,12 +30,9 @@ class WelcomePage extends StatelessWidget {
             children: [
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 50.0),
-                child: Text('PRODUCTOS DE CALIDAD, A LA PUERTA DE TU CASA', style: TextStyle(
-                 color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  fontSize: 45.0
-                )),
+                child: headerText('PRODUCTOS DE CALIDAD, A LA PUERTA DE TU CASA', Colors.white, FontWeight.bold, 45.0),
               ),
+
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 30.0),
                 child: Text('Proporcione la ubicacion exacta para un servicio mas rapido.', style: TextStyle(

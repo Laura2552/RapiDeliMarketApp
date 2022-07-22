@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
-import 'package:rapideli_market_app/src/features/presentation/widgets/back_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/back_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
 
 class SignUpPage extends StatelessWidget {
   
@@ -20,11 +21,7 @@ class SignUpPage extends StatelessWidget {
           padding: EdgeInsets.all(30),
           child: Column(
             children: [
-              Text('Crea una cuenta',
-                  style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30.0)),
+              headerText('Crea una cuenta', Theme.of(context).primaryColor, FontWeight.bold, 30.0),
               _usernameInput(context),
               _emailInput(context),
               _phoneInput(context),

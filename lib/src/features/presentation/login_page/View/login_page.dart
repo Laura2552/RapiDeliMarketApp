@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 //color
 import 'package:rapideli_market_app/src/colors/colors.dart';
 //widgets
-import 'package:rapideli_market_app/src/features/presentation/widgets/back_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/back_button.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -157,8 +157,7 @@ Widget _loginButton(BuildContext context) {
     margin: EdgeInsets.only(top: 30.0),
     child: RaisedButton(
       onPressed: () {
-        Navigator.push(context,  MaterialPageRoute(builder: (context) => LoginPage()),
-        );
+        Navigator.pushNamed(context,'exploretab');
       },
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0)

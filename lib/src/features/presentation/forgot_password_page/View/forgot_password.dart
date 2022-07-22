@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rapideli_market_app/src/features/presentation/widgets/back_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/back_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
 
 class ForgotPassword extends StatelessWidget {
 
@@ -21,11 +22,7 @@ class ForgotPassword extends StatelessWidget {
           padding: EdgeInsets.all(30.0),
           child: Column(
             children: [
-              Text('¿Ha olvidado su contraseña?',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0)),
+              headerText('¿Ha olvidado su contraseña?', Theme.of(context).primaryColor, FontWeight.bold, 30.0),
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: Text('Por favor ingrese su correo electronico. Recibira un enlace para crear una nueva contraseña via email.',
@@ -97,11 +94,7 @@ void _showAlerta(BuildContext context){
                 ),
                 Container(
                   margin: EdgeInsets.all(15.0),
-                  child: Text('Tu contraseña ha sido restaurada',
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0)),
+                  child: headerText('Tu contraseña ha sido restaurada', Theme.of(context).primaryColor, FontWeight.bold, 20.0),
                 ),
                 Container(
                   margin: EdgeInsets.all(15.0),
