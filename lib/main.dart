@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: routes,
-      initialRoute: 'exploretab',
+      initialRoute: 'profiletab',
       theme: ThemeData(
         accentColor: Color.fromRGBO(255, 140, 0, 1.0),
         primaryColor: Color.fromRGBO(10, 31, 68, 1.0),
