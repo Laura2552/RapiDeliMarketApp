@@ -42,7 +42,7 @@ Widget _header() {
               margin: EdgeInsets.only(left: 10.0),
               child: Row(
                 children: [
-                  headerText('Jennifer Perez', Colors.black, FontWeight.w600 , 25),
+                  headerText(texto: 'Jennifer Perez', color: Colors.black, fontWeight: FontWeight.w600 , fontSize: 25),
                   IconButton(
                       icon: Icon(Icons.chevron_right, color: gris),
                       onPressed: () {})
@@ -64,7 +64,7 @@ Widget _header() {
                         height: 16),
                     Container(
                       margin: EdgeInsets.only(left: 1),
-                      child: headerText('Miembro VIP', Colors.white, FontWeight.normal, 11),
+                      child: headerText(texto: 'Miembro VIP', color: Colors.white, fontWeight: FontWeight.normal, fontSize: 11),
                     )
                   ],
                 ),
@@ -88,7 +88,7 @@ Widget _contentProfile() {
             width: 29,
             height: 29,
           ),
-          title: headerText('Notificaciones', Colors.black, FontWeight.w400, 17),
+          title: headerText(texto: 'Notificaciones', color: Colors.black, fontWeight: FontWeight.w400, fontSize: 17),
           trailing: Icon(Icons.chevron_right, color: gris,),
         ),
         ListTile(
@@ -97,7 +97,7 @@ Widget _contentProfile() {
             width: 29,
             height: 29,
           ),
-          title: headerText('Metodos de pago', Colors.black, FontWeight.w400, 17),
+          title: headerText(texto: 'Metodos de pago', color: Colors.black, fontWeight: FontWeight.w400, fontSize: 17),
           trailing: Icon(Icons.chevron_right, color: gris,),
         ),
         ListTile(
@@ -106,7 +106,7 @@ Widget _contentProfile() {
             width: 29,
             height: 29,
           ),
-          title: headerText('Historial', Colors.black, FontWeight.w400, 17),
+          title: headerText(texto: 'Historial', color: Colors.black, fontWeight: FontWeight.w400, fontSize: 17),
           trailing: Icon(Icons.chevron_right, color: gris,),
         ),
         ListTile(
@@ -115,7 +115,7 @@ Widget _contentProfile() {
             width: 29,
             height: 29,
           ),
-          title: headerText('Codigo de promo', Colors.black, FontWeight.w400, 17),
+          title: headerText(texto: 'Codigo de promo', color: Colors.black, fontWeight: FontWeight.w400, fontSize: 17),
           trailing: Icon(Icons.chevron_right, color: gris,),
         ),
         SizedBox(height: 10),
@@ -125,7 +125,7 @@ Widget _contentProfile() {
             width: 29,
             height: 29,
           ),
-          title: headerText('Configuracion', Colors.black, FontWeight.w400, 17),
+          title: headerText(texto: 'Configuracion', color: Colors.black, fontWeight: FontWeight.w400, fontSize: 17),
           trailing: Icon(Icons.chevron_right, color: gris,),
         ),
         ListTile(
@@ -134,7 +134,7 @@ Widget _contentProfile() {
             width: 29,
             height: 29,
           ),
-          title: headerText('Invitar amigos', Colors.black, FontWeight.w400, 17),
+          title: headerText(texto: 'Invitar amigos', color: Colors.black, fontWeight: FontWeight.w400, fontSize: 17),
           trailing: Icon(Icons.chevron_right, color: gris,)),
         ListTile(
           leading: Image(
@@ -142,7 +142,7 @@ Widget _contentProfile() {
             width: 29,
             height: 29,
           ),
-          title: headerText('Centro de ayuda', Colors.black, FontWeight.w400, 17),
+          title: headerText(texto: 'Centro de ayuda', color: Colors.black, fontWeight: FontWeight.w400, fontSize: 17),
           trailing: Icon(Icons.chevron_right, color: gris,),
         ),
         ListTile(
@@ -151,7 +151,7 @@ Widget _contentProfile() {
             width: 29,
             height: 29,
           ),
-          title: headerText('Nosotros', Colors.black, FontWeight.w400, 17),
+          title: headerText(texto: 'Nosotros', color: Colors.black, fontWeight: FontWeight.w400, fontSize: 17),
           trailing: Icon(Icons.chevron_right, color: gris,),
         )
       ],

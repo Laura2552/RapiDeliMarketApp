@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 Widget headerText(
     {
-      String texto = "",
+      String texto = '',
       Color color = Colors.black,
       FontWeight fontWeight = FontWeight.bold,
       double fontSize
