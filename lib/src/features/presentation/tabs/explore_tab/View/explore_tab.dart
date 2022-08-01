@@ -4,80 +4,121 @@ import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/populares_card.dart';
 
 class ExploreTab extends StatelessWidget {
   const ExploreTab({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-     body: SafeArea(
-         child: CustomScrollView(
-           slivers: [
-             SliverList(delegate: SliverChildListDelegate([
-               Container(
-                 padding: EdgeInsets.symmetric(horizontal: 4),
-                 child: Column(
-                   children: [
-                     _topBar(context),
-                     Container(
-                       margin: EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
-                       alignment: Alignment.centerLeft,
-                       child: headerText('Conoce nuestros productos', Colors.black, FontWeight.bold, 30.0),
-                     ),
-                     _sliderCards(),
-                     _header(context, "Los mas populares hoy", "Ver mas"),
-                     _populares(context, 'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
-                     _populares(context, 'https://images.heb.com/is/image/HEBGrocery/002012107?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0'),
-                     _populares(context, 'https://almacen.do/wp-content/uploads/2020/12/Tostitos-Medium-Chunky-Salsa_-15.5-oz-Front.jpg')
-                   ],
-                 ),
-               )
-             ]))
-           ],
-     )),
-   );
+    return Scaffold(
+      body: SafeArea(
+          child: CustomScrollView(
+        slivers: [
+          SliverList(
+              delegate: SliverChildListDelegate([
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 4),
+              child: Column(
+                children: [
+                  _topBar(context),
+                  Container(
+                    margin:
+                        EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
+                    alignment: Alignment.centerLeft,
+                    child: headerText(texto: 'Conoce nuestros productos', color: Colors.black,
+                        fontSize: 30.0),
+                  ),
+                  _sliderCards(),
+                  _header(context, "Los mas populares hoy", "Ver mas"),
+                  popularesCard(
+                    image: NetworkImage(
+                        'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
+                    title: "Tostitos Santa Elena",
+                    subtitle: "Funda de tostitos 15oz",
+                    review: "4.5",
+                    ratings: "(2 calificaciones)",
+                    buttonText: "Envío",
+                    hasActionButton: true),
+                  popularesCard(
+                      image: NetworkImage(
+                          'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
+                      title: "Tostitos Santa Elena",
+                      subtitle: "Funda de tostitos 15oz",
+                      review: "4.5",
+                      ratings: "(2 calificaciones)",
+                      buttonText: "Envío",
+                      hasActionButton: true),
+                  popularesCard(
+                      image: NetworkImage(
+                          'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
+                      title: "Tostitos Santa Elena",
+                      subtitle: "Funda de tostitos 15oz",
+                      review: "4.5",
+                      ratings: "(2 calificaciones)",
+                      buttonText: "Envío",
+                      hasActionButton: true),
+                  SizedBox(
+                      height: 10.0
+                  ),
+                  _header(context, "Collecciones", "Ver mas"),
+                  _sliderCollections()
+                ],
+              ),
+            )
+          ]))
+        ],
+      )),
+    );
   }
 }
 
-Widget _topBar(BuildContext context){
+Widget _topBar(BuildContext context) {
   return Row(
     children: [
-      Container(
-        width: 285,
-        padding: EdgeInsets.all(10.0),
-        margin: EdgeInsets.only(left: 16),
-        decoration: BoxDecoration(
-          border: Border.all(color: Color.fromRGBO(234, 236, 239, 1.0)),
-          borderRadius: BorderRadius.circular(20.0)
-        ),
-        child: Row(
-          children: [
-            Icon(Icons.search, size: 20.0, color: gris,),
-            Container(
-              margin: EdgeInsets.only(left: 5),
-              child: Text('Buscar', style: TextStyle(
+      GestureDetector(
+        onTap: () => Navigator.pushNamed(context, 'search'),
+        child: Container(
+          width: 285,
+          padding: EdgeInsets.all(10.0),
+          margin: EdgeInsets.only(left: 16),
+          decoration: BoxDecoration(
+              border: Border.all(color: Color.fromRGBO(234, 236, 239, 1.0)),
+              borderRadius: BorderRadius.circular(20.0)),
+          child: Row(
+            children: [
+              Icon(
+                Icons.search,
+                size: 20.0,
                 color: gris,
-                fontSize: 17.0
-              ),),
-            )
-          ],
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 5),
+                child: Text(
+                  'Buscar',
+                  style: TextStyle(color: gris, fontSize: 17.0),
+                ),
+              )
+            ],
+          ),
         ),
       ),
       Container(
-        width: 35.0,
-        height: 35.0,
+          width: 35.0,
+          height: 35.0,
           margin: EdgeInsets.only(left: 10),
           decoration: BoxDecoration(
-            color: Color.fromRGBO(209, 209, 214, 1.0),
+              color: Color.fromRGBO(209, 209, 214, 1.0),
               borderRadius: BorderRadius.circular(30)),
-        child: IconButton(
-            icon: Icon(Icons.filter_list, size: 20, color: Colors.white,),
-            onPressed: () {
-
-            }
-        )
-      )
+          child: IconButton(
+              icon: Icon(
+                Icons.filter_list,
+                size: 20,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, 'filter');
+              }))
     ],
   );
 }
@@ -93,8 +134,7 @@ Widget _sliderCards() {
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
               return _tarjeta(context);
-            }
-        );
+            });
       },
     ),
   );
@@ -111,8 +151,8 @@ Widget _tarjeta(BuildContext context) {
               width: 228.0,
               height: 250.0,
               fit: BoxFit.cover,
-              image: NetworkImage('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvY2ElMjBjb2xhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60')
-          ),
+              image: NetworkImage(
+                  'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvY2ElMjBjb2xhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60')),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +167,7 @@ Widget _tarjeta(BuildContext context) {
             ),
             Container(
               alignment: Alignment.centerLeft,
-              child: Text("Coco-cola de lata, paquete de 6",
+              child: Text("Coca-cola de lata, paquete de 6",
                   style: TextStyle(
                       color: gris,
                       fontWeight: FontWeight.w500,
@@ -136,12 +176,11 @@ Widget _tarjeta(BuildContext context) {
             Row(
               children: [
                 Icon(Icons.star, color: amarillo, size: 16),
-                Text("4.8", style:
-                TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 13.0
-                )),
+                Text("4.8",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 13.0)),
                 Text(" (87 calificaciones)",
                     style: TextStyle(
                         color: gris,
@@ -154,11 +193,11 @@ Widget _tarjeta(BuildContext context) {
                   child: RaisedButton(
                       elevation: 0.5,
                       shape: StadiumBorder(),
-                      color: Theme.of(context).accentColor,
+                      color: orange,
                       textColor: Colors.white,
                       onPressed: () {},
-                      child: Text('Delivery', style: TextStyle(fontSize: 11.0))
-                  ),
+                      child:
+                          Text('Enviar', style: TextStyle(fontSize: 11.0))),
                 )
               ],
             )
@@ -174,16 +213,18 @@ Widget _header(BuildContext context, String textHeader, String textAction) {
     children: [
       Container(
         alignment: Alignment.centerLeft,
-        child: headerText(textHeader, Colors.black, FontWeight.bold, 20.0),
+        child: headerText(texto: textHeader, color: Colors.black, fontSize: 20.0),
       ),
       Spacer(),
       GestureDetector(
         child: Row(
           children: [
-            Text(textAction, style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
-                fontSize: 15.0),
+            Text(
+              textAction,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15.0),
             ),
             Icon(Icons.play_arrow, size: 15.0)
           ],
@@ -193,46 +234,40 @@ Widget _header(BuildContext context, String textHeader, String textAction) {
   );
 }
 
-Widget _populares(BuildContext context, String foto) {
-  return Column(
-    children: [
-      Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          children: [
-            ClipRRect(
-              child: Image(
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                  image: NetworkImage(foto)
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                    margin: EdgeInsets.symmetric(vertical: 7.0),
-                    child: headerText("Tostitos santa elena", Colors.black, FontWeight.bold, 17.0)),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(bottom: 5.0),
-                  child: Text("Funda de tostitos 15oz",
-                    style: TextStyle(
-                        color: gris,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13.0),
-                  ),
-                ),
-                Row(
+Widget _sliderCollections(){
+  return Container(
+    height: 300.0,
+    child: Swiper(
+      itemCount: 4,
+      layout: SwiperLayout.DEFAULT,
+      itemBuilder: (BuildContext context, int index) {
+        return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              return _tarjetaCollection(context);
+            });
+      },
+    ),
+  );
+}
 
-                )
-              ],
-            )
-          ],
+Widget _tarjetaCollection(BuildContext context){
+  return Container(
+    margin: EdgeInsets.all(10.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: Image(
+              width: 300,
+              height: 150,
+              fit: BoxFit.cover,
+              image: NetworkImage(
+                  'https://farm9.staticflickr.com/8450/8049203204_391cec612b.jpg')
+          ),
         ),
-      )
-    ],
+      ],
+    ),
   );
 }

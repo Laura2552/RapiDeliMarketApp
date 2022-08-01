@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 //widgets
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/back_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/rounded_button.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -44,31 +45,35 @@ class LoginPage extends StatelessWidget {
                 child: Center(
                   child: Column(
                     children: [
-                      Text("Bienvenido", style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30.0
-                      )),
-
-                      Text("Inicia sesion en tu cuenta", style: TextStyle(
-                          color: gris,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15.0
-                      )),
+                      Text("Bienvenido",
+                          style: TextStyle(
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30.0)),
+                      Text("Inicia sesion en tu cuenta",
+                          style: TextStyle(
+                              color: gris,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15.0)),
                       _emailInput(),
                       _passwordInput(),
-                      _loginButton(context),
+                      roundedButton(
+                          color: orange,
+                          labelButton: 'Iniciar sesion',
+                          func: () {
+                            Navigator.pushNamed(context, 'tabs');
+                          }),
                       Container(
                         margin: EdgeInsets.only(top: 20.0),
                         child: GestureDetector(
                           onTap: () {
                             Navigator.pushNamed(context, 'forgot-password');
                           },
-                          child: Text('¿Olvidaste tu contraseña?', style: TextStyle(
-                              color: Colors.blue.shade700,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 17.0
-                          )),
+                          child: Text('¿Olvidaste tu contraseña?',
+                              style: TextStyle(
+                                  color: Colors.blue.shade700,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 17.0)),
                         ),
                       ),
                       Container(
@@ -76,28 +81,27 @@ class LoginPage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('¿No tienes una cuenta?', style: TextStyle(
-                                color: gris,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 15.0
-                            )),
+                            Text('¿No tienes una cuenta?',
+                                style: TextStyle(
+                                    color: gris,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15.0)),
                             GestureDetector(
                               onTap: () {
                                 Navigator.pushNamed(context, 'sign-up');
                               },
                               child: Container(
                                 margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                child: Text('Registrate', style: TextStyle(
-                                    color:Theme.of(context).accentColor,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15.0
-                                )),
+                                child: Text('Registrate',
+                                    style: TextStyle(
+                                        color: orange,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 15.0)),
                               ),
                             ),
                           ],
                         ),
                       )
-
                     ],
                   ),
                 ),
@@ -112,61 +116,32 @@ class LoginPage extends StatelessWidget {
 
 Widget _emailInput() {
   return Container(
-    margin: EdgeInsets.only( top: 30.0 ),
-    padding: EdgeInsets.only( left: 20.0 ),
+    margin: EdgeInsets.only(top: 30.0),
+    padding: EdgeInsets.only(left: 20.0),
     decoration: BoxDecoration(
         color: Color.fromRGBO(142, 142, 147, 1.2),
-        borderRadius: BorderRadius.circular(30.0)
-    ),
+        borderRadius: BorderRadius.circular(30.0)),
     child: TextField(
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
           hintText: 'Email',
-          border: OutlineInputBorder(
-              borderSide: BorderSide.none
-          )
-      ),
+          border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
 }
 
 Widget _passwordInput() {
   return Container(
-    margin: EdgeInsets.only( top: 15.0 ),
-    padding: EdgeInsets.only( left: 20.0 ),
+    margin: EdgeInsets.only(top: 15.0),
+    padding: EdgeInsets.only(left: 20.0),
     decoration: BoxDecoration(
         color: Color.fromRGBO(142, 142, 147, 1.2),
-        borderRadius: BorderRadius.circular(30.0)
-    ),
+        borderRadius: BorderRadius.circular(30.0)),
     child: TextField(
       obscureText: true,
       decoration: InputDecoration(
           hintText: 'Contraseña',
-          border: OutlineInputBorder(
-              borderSide: BorderSide.none
-          )
-      ),
-    ),
-  );
-}
-
-Widget _loginButton(BuildContext context) {
-  return Container(
-    width: 350.0,
-    height: 45.0,
-    margin: EdgeInsets.only(top: 30.0),
-    child: RaisedButton(
-      onPressed: () {
-        Navigator.pushNamed(context,'exploretab');
-      },
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0)
-      ),
-      color: Theme.of(context).accentColor,
-      child: Text('Iniciar sesion', style: TextStyle(
-          color: Colors.white,
-          fontSize: 17.0
-      )),
+          border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
 }

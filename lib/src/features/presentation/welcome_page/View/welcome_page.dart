@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/login_page/View/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -30,18 +32,41 @@ class WelcomePage extends StatelessWidget {
             children: [
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 50.0),
-                child: headerText('PRODUCTOS DE CALIDAD, A LA PUERTA DE TU CASA', Colors.white, FontWeight.bold, 45.0),
+                child: headerText(texto: 'PRODUCTOS DE CALIDAD, A LA PUERTA DE TU CASA',
+                    color: Colors.white,
+                    fontSize: 45.0),
               ),
 
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 30.0),
-                child: Text('Proporcione la ubicacion exacta para un servicio mas rapido.', style: TextStyle(
+                child: Text('Proporcione la ubicación exacta para un servicio más rápido.', style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w400,
                     fontSize: 17.0
                 )),
               ),
-              Container(
+             roundedButton(
+                 labelButton: 'Inicia sesión',
+                 color: orange,
+                 func: (){
+                      Navigator.pushNamed(context, 'login');
+             }),
+              roundedButton(
+                labelButton: 'Conectar con facebook',
+                color: fbButtonColor,
+                isWithIcon: true,
+                icon: AssetImage('assets/face.png'),
+                func: ()=> print("IrAFacebook")
+              )
+                    // aqui va el boton azul
+            ],
+          )]
+      )
+    );
+  }
+}
+/*
+Container(
                 width: 350.0,
                 height: 45.0,
                 child: RaisedButton(
@@ -58,41 +83,6 @@ class WelcomePage extends StatelessWidget {
                           fontSize: 15.0
                     )),
                     ),
-              ),
-              Container(
-                width: 350.0,
-                height: 45.0,
-                margin: EdgeInsets.only(top: 20.0),
-                child: RaisedButton(
-                  onPressed: () {
+              )
 
-                  },
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0)
-                  ),
-                  color: Theme.of(context).buttonColor,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(image: AssetImage('assets/face.png'),
-                      width: 20.0,
-                      height: 20.0
-                      ),
-
-                    Container(
-                      margin: EdgeInsets.only(left: 10.0),
-                      child: Text('Conectar con facebook', style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15.0
-                      )),
-                    )
-                    ],
-                  )),
-                ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
+ */

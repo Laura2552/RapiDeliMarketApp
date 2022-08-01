@@ -135,8 +135,7 @@ Widget _contentProfile() {
             height: 29,
           ),
           title: headerText('Invitar amigos', Colors.black, FontWeight.w400, 17),
-          trailing: Icon(Icons.chevron_right, color: gris,),
-        ),
+          trailing: Icon(Icons.chevron_right, color: gris,)),
         ListTile(
           leading: Image(
             image: AssetImage('assets/help.png'),

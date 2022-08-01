@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:rapideli_market_app/src/features/presentation/filter_page/View/filter_page.dart';
 
 //Pages
 import 'package:rapideli_market_app/src/features/presentation/forgot_password_page/View/forgot_password.dart';
 import 'package:rapideli_market_app/src/features/presentation/login_page/View/login_page.dart';
+import 'package:rapideli_market_app/src/features/presentation/search_page/View/searchView.dart';
 import 'package:rapideli_market_app/src/features/presentation/sign_up_page/View/sign_up_page.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/explore_tab/View/explore_tab.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/profile_tab/View/profile_tab.dart';
@@ -21,5 +23,7 @@ final routes = <String, WidgetBuilder> {
   'tabs' : (BuildContext context) => TabsPage(),
   'exploretab' : (BuildContext context) => ExploreTab(),
   'profiletab' : (BuildContext context) => ProfileTab(),
+  'search' : (BuildContext context) => SearchPage(),
+  'filter' : (BuildContext context) => FilterPage(),
 
 };

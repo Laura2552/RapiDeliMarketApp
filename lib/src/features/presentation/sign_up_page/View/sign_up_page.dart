@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/back_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/rounded_button.dart';
 
 class SignUpPage extends StatelessWidget {
   
@@ -21,13 +22,15 @@ class SignUpPage extends StatelessWidget {
           padding: EdgeInsets.all(30),
           child: Column(
             children: [
-              headerText('Crea una cuenta', Theme.of(context).primaryColor, FontWeight.bold, 30.0),
+              headerText(texto: 'Crea una cuenta', color: primaryColor, fontSize: 30.0),
               _usernameInput(context),
               _emailInput(context),
               _phoneInput(context),
               _dateOfBirthInput(context),
               _passwordInput(context),
-              _signUpButton(context),
+              roundedButton(color: orange, labelButton: 'Registrarse', func: (){
+
+              }),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
                 child: Text(
@@ -148,20 +151,4 @@ Widget _passwordInput(BuildContext context) {
   );
 }
 
-Widget _signUpButton(BuildContext context) {
-  return Container(
-      width: 370.0,
-      height: 45.0,
-      margin: EdgeInsets.only(top: 40.0),
-      child: RaisedButton(
-        onPressed: () {
 
-        },
-        color: Theme.of(context).accentColor,
-        child: Text(
-          'Registrarse',
-          style: TextStyle(color: Colors.white, fontSize: 17.0),
-        ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      ));
-}
