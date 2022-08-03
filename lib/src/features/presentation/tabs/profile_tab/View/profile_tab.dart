@@ -23,7 +23,7 @@ class _ProfileTabState extends State<ProfileTab> {
 
 Widget _header() {
   return Container(
-    height: 245,
+    height: 203,
     color: bgGrey,
     padding: EdgeInsets.all(39),
     child: Row(

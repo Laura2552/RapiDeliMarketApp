@@ -57,7 +57,7 @@ class LoginPage extends StatelessWidget {
                               fontSize: 15.0)),
                       _emailInput(),
                       _passwordInput(),
-                      roundedButton(
+                      createButton(
                           color: orange,
                           labelButton: 'Iniciar sesion',
                           func: () {

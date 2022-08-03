@@ -45,13 +45,13 @@ class WelcomePage extends StatelessWidget {
                     fontSize: 17.0
                 )),
               ),
-             roundedButton(
+              createButton(
                  labelButton: 'Inicia sesión',
                  color: orange,
                  func: (){
                       Navigator.pushNamed(context, 'login');
              }),
-              roundedButton(
+              createButton(
                 labelButton: 'Conectar con facebook',
                 color: fbButtonColor,
                 isWithIcon: true,

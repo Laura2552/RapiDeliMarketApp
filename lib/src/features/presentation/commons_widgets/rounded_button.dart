@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+const shape = StadiumBorder();
 
-Widget roundedButton(
+Widget createButton(
     {BuildContext context,
     double width = 350.0,
     double height = 45.0,
@@ -10,23 +11,25 @@ Widget roundedButton(
     ImageProvider<Object> icon,
     String labelButton,
     Color color,
+      OutlinedBorder shape = shape,
     Function func}) {
   return Container(
       width: width,
       height: height,
       margin: EdgeInsets.only(top: 20.0),
       child: isWithIcon
-          ? _raisedButtonWithIcon(radius, icon, labelButton, color, func)
-          : _raisedButtonNotIcon(radius, labelButton, color, func)
+          ? _raisedButtonWithIcon(radius, icon, labelButton, color, shape, func)
+          : _raisedButtonNotIcon(radius, labelButton, color, shape, func)
   );
 }
 
-Widget _raisedButtonWithIcon(double radius, ImageProvider<Object> icon, String labelButton, Color color, Function func){
-  return RaisedButton(
+Widget _raisedButtonWithIcon(double radius, ImageProvider<Object> icon, String labelButton, Color color, OutlinedBorder shape, Function func){
+  return ElevatedButton(
       onPressed: func,
-      shape:
-      RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      color: color,
+      style: ElevatedButton.styleFrom(
+        shape: shape,
+          primary: color
+      ),
       child: Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
@@ -42,12 +45,13 @@ Widget _raisedButtonWithIcon(double radius, ImageProvider<Object> icon, String l
       ));
 }
 
-Widget _raisedButtonNotIcon(double radius, String labelButton, Color color, Function func){
-  return RaisedButton(
+Widget _raisedButtonNotIcon(double radius, String labelButton, Color color, OutlinedBorder shape, Function func){
+  return ElevatedButton(
       onPressed: func,
-      shape:
-      RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      color: color,
+      style: ElevatedButton.styleFrom(
+          shape: shape,
+          primary: color
+      ),
       child: Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(

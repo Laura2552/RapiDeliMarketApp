@@ -7,6 +7,7 @@ import 'package:rapideli_market_app/src/features/presentation/login_page/View/lo
 import 'package:rapideli_market_app/src/features/presentation/search_page/View/searchView.dart';
 import 'package:rapideli_market_app/src/features/presentation/sign_up_page/View/sign_up_page.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/explore_tab/View/explore_tab.dart';
+import 'package:rapideli_market_app/src/features/presentation/tabs/my_order_tab/View/my_order_tab.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/profile_tab/View/profile_tab.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/tabs_page/View/tabs_page.dart';
 import 'package:rapideli_market_app/src/features/presentation/welcome_page/View/welcome_page.dart';
@@ -25,5 +26,6 @@ final routes = <String, WidgetBuilder> {
   'profiletab' : (BuildContext context) => ProfileTab(),
   'search' : (BuildContext context) => SearchPage(),
   'filter' : (BuildContext context) => FilterPage(),
+  'myorder' : (BuildContext context) => MyOrderTab(),
 
 };

@@ -70,7 +70,7 @@ class _TabsPageState extends State<TabsPage> {
         AssetImage('assets/location.png'),
         'Habilitar su  ubicación',
         'Por favor permita el uso de su ubicacion para el envío',
-        roundedButton(
+        createButton(
             color: orange, labelButton: "Habilitar ubicación", func: () {}));
   }
 }
