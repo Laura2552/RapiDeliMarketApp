@@ -23,7 +23,7 @@ class _MyOrderTabState extends State<MyOrderTab>{
             elevation: 0.5,
             leading: Text(''),
             backgroundColor: white,
-            title: Center(child: headerText(texto: 'Mi pedido', color: primaryColor, fontSize: 20, fontWeight: FontWeight.w800))),
+            title: headerText(texto: '                 Mi pedido', color: primaryColor, fontSize: 20, fontWeight: FontWeight.w800)),
           SliverList(delegate: SliverChildListDelegate(
             [
               Padding(
