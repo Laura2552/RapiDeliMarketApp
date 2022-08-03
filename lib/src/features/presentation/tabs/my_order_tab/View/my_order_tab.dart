@@ -23,8 +23,7 @@ class _MyOrderTabState extends State<MyOrderTab>{
             elevation: 0.5,
             leading: Text(''),
             backgroundColor: white,
-            title: Center(child: headerText(texto: 'Mi pedido', color: primaryColor, fontSize: 20, fontWeight: FontWeight.w800)),
-          ),
+            title: Center(child: headerText(texto: 'Mi pedido', color: primaryColor, fontSize: 20, fontWeight: FontWeight.w800))),
           SliverList(delegate: SliverChildListDelegate(
             [
               Padding(
@@ -55,7 +54,7 @@ Widget _orders(BuildContext context) {
 
 Widget _carOrders(BuildContext context) {
   return Container(
-    padding: EdgeInsets.all(10.0),
+    padding: EdgeInsets.symmetric(horizontal: 10.0),
     margin: EdgeInsets.symmetric(vertical: 10.0),
     width: double.infinity,
     decoration: BoxDecoration(
@@ -72,7 +71,16 @@ Widget _carOrders(BuildContext context) {
       children: [
         Row(
           children: [_cardOrderTopContent()],
-        )
+        ),
+        Column(
+          children: [
+            _items(context),
+            _items(context),
+            _items(context),
+            _items(context)
+          ],
+        ),
+        _moreContent(context)
       ],
     ),
   );
@@ -86,31 +94,46 @@ Widget _cardOrderTopContent() {
       children: [
         Container(
           margin: EdgeInsets.only(top: 7.0, bottom: 7.0, right: 20.0),
-          child: headerText(texto: "Little creatures - Club Street", fontSize: 20.0, fontWeight: FontWeight.bold),
+          child: headerText(texto: "Productos seleccionados", fontSize: 20.0, fontWeight: FontWeight.bold),
         ),
         Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(Icons.location_on, color: gris, size: 16.0),
-              headerText(texto: "87 Botsford Circle Apt", color: gris, fontWeight: FontWeight.w500, fontSize: 13.0),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10.0),
-                width: 110.0,
-                height: 20.0,
-                child: RaisedButton(
-                  elevation: 0.5,
-                  shape: StadiumBorder(),
-                  color: orange,
-                  textColor: Colors.white,
-                  onPressed: () {},
-                  child: headerText(texto: 'Free Delivery', fontSize: 11),
-                ),
-              )
+              //Icon(Icons.location_on, color: gris, size: 16.0),
+              //headerText(texto: "87 Botsford Circle Apt", color: gris, fontWeight: FontWeight.w500, fontSize: 13.0),
+
             ],
           ),
         )
       ],
+    ),
+  );
+}
+
+Widget _items(context) {
+  return Container(
+    decoration: BoxDecoration(
+      border: Border(bottom: BorderSide(color: Theme.of(context).dividerColor))
+    ),
+    child: ListTile(
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          headerText(texto: 'Tostitos Santa Elena', color: orange, fontWeight: FontWeight.w300, fontSize: 15.0),
+          headerText(texto: 'Funda de tostitos 15oz', color: gris, fontWeight: FontWeight.w300, fontSize: 12.0)
+        ],
+      ),
+      trailing: headerText(texto: 'RD\$160.00', color: orange, fontWeight: FontWeight.w300, fontSize: 15.0),
+    ),
+  );
+}
+
+Widget _moreContent(context) {
+  return Container(
+    child: ListTile(
+      title:  headerText(texto: 'Add more items', color: rosa, fontWeight: FontWeight.w600, fontSize: 17.0),
+
     ),
   );
 }
