@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
-import 'package:rapideli_market_app/src/features/presentation/commons_widgets/populares_card.dart';
+import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Cards/populares_card.dart';
 
 class ExploreTab extends StatelessWidget {
   const ExploreTab({Key key}) : super(key: key);
@@ -27,7 +27,7 @@ class ExploreTab extends StatelessWidget {
                         EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
                     alignment: Alignment.centerLeft,
                     child: headerText(texto: 'Conoce nuestros productos', color: Colors.black,
-                        fontSize: 30.0),
+                        fontSize: 27.0),
                   ),
                   _sliderCards(),
                   _header(context, "Los mas populares hoy", "Ver mas"),
@@ -61,7 +61,11 @@ class ExploreTab extends StatelessWidget {
                   SizedBox(
                       height: 10.0
                   ),
-                  _header(context, "Collecciones", "Ver mas"),
+                  GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context, 'collections');
+                      },
+                      child: _header(context, "Collecciones", "Ver mas")),
                   _sliderCollections()
                 ],
               ),

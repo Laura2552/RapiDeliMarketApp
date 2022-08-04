@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
-import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
 class FavouriteTab extends StatefulWidget{
   FavouriteTab({Key key}) : super(key: key);

@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 
-import 'header_text.dart';
+import '../Headers/header_text.dart';
 
 Widget cardVertical({
   BuildContext context,

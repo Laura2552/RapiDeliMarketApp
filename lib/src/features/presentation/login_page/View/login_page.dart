@@ -6,8 +6,8 @@ import 'package:flutter/services.dart';
 //color
 import 'package:rapideli_market_app/src/colors/colors.dart';
 //widgets
-import 'package:rapideli_market_app/src/features/presentation/commons_widgets/back_button.dart';
-import 'package:rapideli_market_app/src/features/presentation/commons_widgets/rounded_button.dart';
+import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
+import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 
 class LoginPage extends StatelessWidget {
   @override

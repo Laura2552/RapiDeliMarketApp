@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rapideli_market_app/src/features/presentation/collection_page/View/collections_page.dart';
 import 'package:rapideli_market_app/src/features/presentation/filter_page/View/filter_page.dart';
 
 //Pages
@@ -27,5 +28,6 @@ final routes = <String, WidgetBuilder> {
   'search' : (BuildContext context) => SearchPage(),
   'filter' : (BuildContext context) => FilterPage(),
   'myorder' : (BuildContext context) => MyOrderTab(),
+  'collections' : (BuildContext context) => CollectionsPage(),
 
 };
