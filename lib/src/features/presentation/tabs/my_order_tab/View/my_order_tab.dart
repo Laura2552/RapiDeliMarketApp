@@ -1,3 +1,6 @@
+//import 'dart:js';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/header_text.dart';
@@ -30,7 +33,9 @@ class _MyOrderTabState extends State<MyOrderTab>{
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Column(
                 children: [
-                  _orders(context)
+                  _orders(context),
+                  SizedBox(height: 30),
+                  _checkoutResume(context)
                 ],
                ),
               )
@@ -134,6 +139,73 @@ Widget _moreContent(context) {
     child: ListTile(
       title:  headerText(texto: 'Add more items', color: rosa, fontWeight: FontWeight.w600, fontSize: 17.0),
 
+    ),
+  );
+}
+
+Widget _checkoutResume(context) {
+  return Container(
+    padding: EdgeInsets.all(10),
+    margin: EdgeInsets.symmetric(vertical: 10),
+    width: double.infinity,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10.0),
+      color: white,
+      boxShadow: [
+        BoxShadow(
+          color: Color.fromRGBO(210, 211, 215, 1.0),
+          spreadRadius: 1.0,
+          blurRadius: 4.8
+        )
+      ]
+    ),
+    child: Column(
+      children: [
+        _itemsCheckOutResume(title: 'Subtotal', value: 'RD\$340.00', context: context),
+        _itemsCheckOutResume(title: 'Impuestos', value: 'RD\$18.00', context: context),
+        _itemsCheckOutResume(title: 'Envio', value: 'RD\$100.00', context: context),
+        _buttonCheckOut(context)
+      ],
+    ),
+  );
+}
+
+Widget _itemsCheckOutResume({ title: String, value: String, context:BuildContext}) {
+  return Container(
+    decoration: BoxDecoration(
+      border: Border(bottom: BorderSide(color: Theme.of(context).dividerColor))
+    ),
+    child: ListTile(
+      title: headerText(texto: title, fontWeight: FontWeight.w400, fontSize: 15.0),
+      trailing: headerText(texto: value, fontWeight: FontWeight.w500, fontSize: 15.0),
+    ),
+  );
+}
+
+Widget _buttonCheckOut(context){
+  return Container(
+    width: double.infinity,
+    height: 45.0,
+    margin: EdgeInsets.only(top: 10.0),
+    child: RaisedButton(
+      elevation: 0.5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      color: orange,
+      onPressed: (){},
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(),
+          Container(
+            //margin: EdgeInsets.only(left: 50),
+            alignment: Alignment.center,
+            child: headerText(texto: 'Pedir', fontSize: 17, fontWeight: FontWeight.bold, color: white),
+          ),
+          Container(
+            child: headerText(texto: 'RD\$.458.00', fontSize: 15, fontWeight: FontWeight.bold, color: white),
+          )
+        ],
+      ),
     ),
   );
 }
