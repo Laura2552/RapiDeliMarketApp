@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart ';
 import 'package:flutter/material.dart';
+import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Cards/favourites_card.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
@@ -13,7 +14,7 @@ class CollectionDetailPage extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             expandedHeight: 230,
-            backgroundColor: Colors.white,
+            backgroundColor: orangeWithHalfOpacity,
             flexibleSpace: FlexibleSpaceBar(
               background: Stack(
                 children: [
@@ -47,7 +48,7 @@ class CollectionDetailPage extends StatelessWidget {
           SliverList(
               delegate: SliverChildListDelegate([
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(vertical: 1.0),
               child: Column(
                 children: [
                   Column(
@@ -59,7 +60,7 @@ class CollectionDetailPage extends StatelessWidget {
                         subtitle: "UND",
                         review: "4.5",
                         ratings: "(2 calificaciones)",
-                        buttonText: "Envío",
+                        buttonText: "Agregar",
                         hasActionButton: true,
                         isFavourite: true,
                       ),
@@ -70,7 +71,7 @@ class CollectionDetailPage extends StatelessWidget {
                         subtitle: "UND",
                         review: "4.5",
                         ratings: "(2 calificaciones)",
-                        buttonText: "Envío",
+                        buttonText: "Agregar",
                         hasActionButton: true,
                         isFavourite: false,
                       ),
