@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/explore_tab/View/explore_tab.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/favourite_tab/View/favourite_tab.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/my_order_tab/View/my_order_tab.dart';

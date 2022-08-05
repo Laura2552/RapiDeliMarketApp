@@ -2,9 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
+//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
+//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
+//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
 class ForgotPassword extends StatelessWidget {
   @override
@@ -39,6 +42,7 @@ class ForgotPassword extends StatelessWidget {
               _emailInput(),
               createButton(
                 color: orange,
+                shape: StadiumBorder(),
                 labelButton: 'Enviar',
                 func: () => _showAlerta(context))
             ],

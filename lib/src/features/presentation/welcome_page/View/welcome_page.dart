@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:rapideli_market_app/src/features/presentation/login_page/View/login_page.dart';
 
 class WelcomePage extends StatelessWidget {

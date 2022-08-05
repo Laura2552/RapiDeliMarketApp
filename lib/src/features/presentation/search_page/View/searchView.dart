@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Cards/vertical_card.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_double.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Cards/populares_card.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Cards/populares_card.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Cards/vertical_card.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_double.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
 class SearchPage extends StatelessWidget {
   @override
