@@ -117,8 +117,8 @@ class LoginPage extends StatelessWidget {
 
 Widget _emailInput() {
   return Container(
-    margin: EdgeInsets.only(top: 30.0),
-    padding: EdgeInsets.only(left: 20.0),
+    //margin: EdgeInsets.only(top: 30.0),
+    //padding: EdgeInsets.only(left: 20.0),
     decoration: BoxDecoration(
         color: Color.fromRGBO(142, 142, 147, 1.2),
         borderRadius: BorderRadius.circular(30.0)),

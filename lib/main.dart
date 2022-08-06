@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 //import 'package:rapideli_market_app/src.features.presentation.tabs/tabs_page.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'package:rapideli_market_app/firebase_options.dart';
 //Routes
 import 'package:rapideli_market_app/src/routes/routes.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Init Firebase service.
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

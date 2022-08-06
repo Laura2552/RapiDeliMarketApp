@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
@@ -66,17 +65,17 @@ Widget _roundedButtonFilter(Function()? func, bool isActive, String labelText, B
     margin: EdgeInsets.symmetric(horizontal: 7),
     child: createButton(
       context: context,
-        labelButton: labelText,
-        labelButtonColor: isActive ? orange : gris,
-        func: func,
-        buttonColor: white,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-            side: BorderSide(color: isActive ? orange : gris)),
+      labelButton: labelText,
+      labelButtonColor: isActive ? orange : gris,
+      func: func,
+      buttonColor: white,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          side: BorderSide(color: isActive ? orange : gris)),
     ),
   );
 
-    /*createButton(
+  /*createButton(
     labelButton: labelText,
     labelButtonColor: isActive ? orange : gris,
     shape: RoundedRectangleBorder(

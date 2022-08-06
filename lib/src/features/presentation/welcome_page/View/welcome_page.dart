@@ -3,12 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:rapideli_market_app/src/features/presentation/login_page/View/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    // Create a new user with a first and last name
+    final user = <String, dynamic>{
+      "first": "Ada",
+      "last": "Lovelace",
+      "born": 1815,
+      "items": {
+        "item_1": "asdasd"
+      }
+    };
+
+    // Add a new document with a generated ID
+    final db = FirebaseFirestore.instance;
+    db.collection("users").add(user).then((DocumentReference doc) => print('DocumentSnapshot added with ID: ${doc.id}'));
+
     return Scaffold(
       body: Stack(
         children: [
