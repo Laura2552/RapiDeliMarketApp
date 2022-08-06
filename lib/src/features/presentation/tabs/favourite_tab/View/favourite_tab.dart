@@ -36,7 +36,7 @@ class FavouriteTabState extends State<FavouriteTab>{
                           subtitle: "UND",
                           review: "4.5",
                           ratings: "(2 calificaciones)",
-                          buttonText: "Envío",
+                          buttonText: "Agregar",
                           hasActionButton: true,
                           isFavourite: true,
                         ),
