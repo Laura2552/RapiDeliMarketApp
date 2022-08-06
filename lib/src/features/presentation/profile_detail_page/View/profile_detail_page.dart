@@ -52,15 +52,16 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                 decoration: createBoxDecorationWithShadows(),
                 width: screenWidth.getScreenWidth(context: context),
                 height: screenHeight.getScreenHeigth(
-                    context: context, multiplier: 0.65),
+                    context: context, multiplier: 0.75),
                 child: Column(
                   children: [
                     Transform.translate(
-                      offset: Offset(0, -60),
+                      offset: Offset(0, -65),
                       child: AvatarView(
                           backgroundImage: 
                           'https://dam.muyinteresante.com.mx/wp-content/uploads/2018/05/extranos-pueden-elegir-mejores-fotos-de-perfil.jpg'),
                     ),
+
                     TextFieldsProfileDetailView()
                   ],
                 ),
