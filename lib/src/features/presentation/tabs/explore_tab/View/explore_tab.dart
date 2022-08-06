@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Cards/populares_card.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
@@ -195,15 +196,10 @@ Widget _tarjeta(BuildContext context) {
                   margin: EdgeInsets.symmetric(horizontal: 5.0),
                   width: 75.0,
                   height: 18.0,
-                  child: RaisedButton(
-                      elevation: 0.5,
-                      shape: StadiumBorder(),
-                      color: orange,
-                      textColor: Colors.white,
-                      onPressed: () {},
-                      child:
-                          Text('Enviar', style: TextStyle(fontSize: 11.0))),
-                )
+                  child: createButton(
+                    buttonColor: orange,
+                    labelButton: 'Enviar',
+                    labelFontSize: 11.0))
               ],
             )
           ],

@@ -71,6 +71,6 @@ class _TabsPageState extends State<TabsPage> {
         'Habilitar su  ubicación',
         'Por favor permita el uso de su ubicacion para el envío',
         createButton(
-            color: orange, labelButton: "Habilitar ubicación", func: () {}));
+            buttonColor: orange, labelButton: "Habilitar ubicación", func: () {}));
   }
 }

@@ -7,8 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
 //widgets
-//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
-//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 
 class LoginPage extends StatelessWidget {
@@ -60,7 +58,7 @@ class LoginPage extends StatelessWidget {
                       _emailInput(),
                       _passwordInput(),
                       createButton(
-                          color: orange,
+                          buttonColor: orange,
                           labelButton: 'Iniciar sesion',
                           func: () {
                             Navigator.pushNamed(context, 'tabs');

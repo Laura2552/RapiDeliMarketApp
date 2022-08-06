@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
-import 'package:rapideli_market_app/src/features/presentation/login_page/View/login_page.dart';
+//import 'package:rapideli_market_app/src/features/presentation/login_page/View/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
 
@@ -47,13 +47,13 @@ class WelcomePage extends StatelessWidget {
               ),
               createButton(
                  labelButton: 'Inicia sesión',
-                 color: orange,
+                 buttonColor: orange,
                  func: (){
                       Navigator.pushNamed(context, 'login');
              }),
               createButton(
                 labelButton: 'Conectar con facebook',
-                color: fbButtonColor,
+                buttonColor: fbButtonColor,
                 isWithIcon: true,
                 icon: AssetImage('assets/face.png'),
                 func: ()=> print("IrAFacebook")

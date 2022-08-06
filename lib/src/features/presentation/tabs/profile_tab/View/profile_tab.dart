@@ -16,7 +16,9 @@ class _ProfileTabState extends State<ProfileTab> {
   Widget build(BuildContext context){
     return Scaffold(
       body: Column(
-        children: [_header(), _contentProfile()],
+        children: [GestureDetector(
+          onTap: () => Navigator.pushNamed(context, 'profile-detail'),
+            child: _header()), _contentProfile()],
       ),
     );
   }
@@ -53,10 +55,13 @@ Widget _header() {
             Container(
               height: 25,
               margin: EdgeInsets.only(left: 11.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {},
-                color: rosa,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                style: ElevatedButton.styleFrom(
+                  primary: rosa,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                ),
                 child: Row(
                   children: [
                     Image(

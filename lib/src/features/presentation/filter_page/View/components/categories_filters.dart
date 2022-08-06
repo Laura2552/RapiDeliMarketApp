@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 
 class CategoriesFilter extends StatefulWidget {
   CategoriesFilter({Key key}) : super(key: key);
@@ -21,9 +22,11 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        Wrap(
+          direction: Axis.horizontal,
+          alignment: WrapAlignment.start,
           children: [
             _roundedButtonFilter((){
               setState(() => btnGranos = !btnGranos);
@@ -37,11 +40,6 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
             _roundedButtonFilter((){
               setState(() => btnVerduras = !btnVerduras);
             }, btnVerduras, 'Verduras'),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children:[
             _roundedButtonFilter((){
               setState(() => btnEmbutidos = !btnEmbutidos);
             }, btnEmbutidos, 'Embutidos'),
@@ -50,28 +48,35 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
             }, btnEnlatados, 'Enlatados'),
             _roundedButtonFilter((){
               setState(() => btnPicaderas = !btnPicaderas);
-            }, btnPicaderas, 'Picaderas'),]
-        )
+            }, btnPicaderas, 'Picaderas')
+          ],
+        ),
       ],
     );
   }
 }
 
 Widget _roundedButtonFilter(Function func, bool isActive, String labelText){
-  return RaisedButton(
-    onPressed: func,
-    elevation: 0.5,
-    color: Colors.white,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(30.0),
-      side: BorderSide(
-          color: isActive ? orange : gris)
-    ),
-    child: Text(
-      labelText,
-      style: TextStyle(
-        color: isActive ? orange : gris
-      ),
+  return Container(
+    width: 104,
+    height: 45,
+    margin: EdgeInsets.all(1),
+    child: createButton(
+        labelButton: labelText,
+        labelButtonColor: isActive ? orange : gris,
+        func: func,
+        buttonColor: white,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            side: BorderSide(color: isActive ? orange : gris)),
     ),
   );
+
+    /*createButton(
+    labelButton: labelText,
+    labelButtonColor: isActive ? orange : gris,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(30.0),
+      side: BorderSide(color: isActive ? orange : gris)));*/
+
 }

@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
-//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:rapideli_market_app/src/features/presentation/tabs/my_order_tab/View/components/empty_Order_view.dart';
 
 class MyOrderTab extends StatefulWidget{
@@ -188,10 +187,14 @@ Widget _buttonCheckOut(context){
     width: double.infinity,
     height: 45.0,
     margin: EdgeInsets.only(top: 10.0),
-    child: RaisedButton(
-      elevation: 0.5,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      color: orange,
+    child:
+
+    ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        elevation: 0.5,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        primary: orange,
+      ),
       onPressed: (){},
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -200,10 +203,18 @@ Widget _buttonCheckOut(context){
           Container(
             //margin: EdgeInsets.only(left: 50),
             alignment: Alignment.center,
-            child: headerText(texto: 'Pedir', fontSize: 17, fontWeight: FontWeight.bold, color: white),
+            child: headerText(
+                texto: 'Pedir',
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+                color: white),
           ),
           Container(
-            child: headerText(texto: 'RD\$.458.00', fontSize: 15, fontWeight: FontWeight.bold, color: white),
+            child: headerText(
+                texto: 'RD\$.458.00',
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: white),
           )
         ],
       ),

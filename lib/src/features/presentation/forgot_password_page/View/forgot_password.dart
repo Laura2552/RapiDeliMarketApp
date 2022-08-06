@@ -28,7 +28,7 @@ class ForgotPassword extends StatelessWidget {
           child: Column(
             children: [
                 headerText(
-                    texto:'¿Ha olvidado su contraseña?', color: primaryColor, fontSize: 30.0),
+                    texto:'¿Ha olvidado su contraseña?', color: primaryColor, fontSize: 27.3),
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
@@ -41,7 +41,7 @@ class ForgotPassword extends StatelessWidget {
               ),
               _emailInput(),
               createButton(
-                color: orange,
+                buttonColor: orange,
                 shape: StadiumBorder(),
                 labelButton: 'Enviar',
                 func: () => _showAlerta(context))
@@ -77,7 +77,7 @@ void _showAlerta(BuildContext context) {
     'En poco tiempo recibiras un email con un codigo para configurar tu nueva contraseña.',
     createButton(
         labelButton: 'Aceptar',
-        color: orange,
+        buttonColor: orange,
         shape: StadiumBorder(),
         func: () {
           Navigator.pushNamed(context, 'login');

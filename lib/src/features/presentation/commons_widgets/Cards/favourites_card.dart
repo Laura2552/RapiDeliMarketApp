@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:rapideli_market_app/src/colors/colors.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:rapideli_market_app/src/utils/styles/box_decoration_shadows.dart';
 
 Widget favouritesCard(
     {BuildContext context,
@@ -25,15 +27,7 @@ Widget favouritesCard(
         left: marginLeft),
     padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
     width: double.infinity,
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-              color: Color.fromRGBO(210, 211, 215, 1.0),
-              offset: Offset(0, 5),
-              blurRadius: 10.0)
-        ]),
+    decoration: createBoxDecorationWithShadows(),
     child: Row(
       children: [
         ClipRRect(
@@ -87,23 +81,7 @@ Widget favouritesCard(
                       texto: ratings,
                       color: gris,
                       fontWeight: FontWeight.w500,
-                      fontSize: 13.0),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10.0),
-                    width: 90.0,
-                    height: 25.0,
-                    child: RaisedButton(
-                      onPressed: () {},
-                      elevation: 0.5,
-                      shape: StadiumBorder(),
-                      color: orange,
-                      textColor: Colors.white,
-                      child: headerText(
-                          texto: buttonText,
-                          fontSize: 11.0,
-                          color: Colors.white),
-                    ),
-                  )
+                      fontSize: 13.0)
                 ],
               )
             ],

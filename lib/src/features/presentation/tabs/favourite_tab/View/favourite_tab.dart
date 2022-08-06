@@ -26,7 +26,7 @@ class FavouriteTabState extends State<FavouriteTab>{
               delegate: SliverChildListDelegate(
                 [
                   Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: EdgeInsets.symmetric(horizontal: 4),
                     child: Column(
                       children: [
                         favouritesCard(

@@ -18,7 +18,7 @@ Future showAlertDialog(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(20.0))),
           content: Container(
-            height: 400,
+            height: 320,
             child: Column(
               children: [
                 Image(
@@ -32,7 +32,7 @@ Future showAlertDialog(
                       color: primaryColor, fontSize: 20.0),
                 ),
                 Container(
-                  margin: EdgeInsets.all(15.0),
+                  margin: EdgeInsets.only(top: 15.0),
                   child: Text(
                       headerSubTitle,
                       style: TextStyle(

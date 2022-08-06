@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 //import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
-import 'package:rapideli_market_app/src/features/presentation/filter_page/View/customsWidgets/categories_filters.dart';
-import 'package:rapideli_market_app/src/features/presentation/filter_page/View/customsWidgets/list_tile_checked.dart';
+import 'package:rapideli_market_app/src/features/presentation/filter_page/View/components/categories_filters.dart';
+import 'package:rapideli_market_app/src/features/presentation/filter_page/View/components/list_tile_checked.dart';
 
 class FilterPage extends StatefulWidget {
   FilterPage({Key key}) : super(key: key);

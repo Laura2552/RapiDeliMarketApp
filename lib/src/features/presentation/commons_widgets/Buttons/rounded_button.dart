@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
 const shape = StadiumBorder();
 
@@ -10,7 +11,9 @@ Widget createButton(
     bool isWithIcon = false,
     ImageProvider<Object> icon,
     String labelButton,
-    Color color,
+      Color labelButtonColor = Colors.white,
+      double labelFontSize = 15.0,
+    Color buttonColor,
       OutlinedBorder shape = shape,
     Function func}) {
   return Container(
@@ -18,17 +21,18 @@ Widget createButton(
       height: height,
       margin: EdgeInsets.only(top: 20.0),
       child: isWithIcon
-          ? _raisedButtonWithIcon(radius, icon, labelButton, color, shape, func)
-          : _raisedButtonNotIcon(radius, labelButton, color, shape, func)
+          ? _raisedButtonWithIcon(radius, icon, labelButton, labelButtonColor, labelFontSize, buttonColor, shape, func)
+          : _raisedButtonNotIcon(radius, labelButton, labelButtonColor, labelFontSize, buttonColor, shape, func)
   );
 }
 
-Widget _raisedButtonWithIcon(double radius, ImageProvider<Object> icon, String labelButton, Color color, OutlinedBorder shape, Function func){
+Widget _raisedButtonWithIcon(double radius, ImageProvider<Object> icon, String labelButton, Color labelButtonColor, double labelFontSize, Color color, OutlinedBorder shape, Function func){
   return ElevatedButton(
       onPressed: func,
       style: ElevatedButton.styleFrom(
         shape: shape,
-          primary: color
+          primary: color,
+        elevation: 0.5
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -38,27 +42,32 @@ Widget _raisedButtonWithIcon(double radius, ImageProvider<Object> icon, String l
               height: 20.0),
           Container(
             margin: EdgeInsets.only(left: 10.0),
-            child: Text(labelButton,
-                style: TextStyle(color: Colors.white, fontSize: 15.0)),
-          )
+            child: headerText(
+                texto: labelButton,
+                color: labelButtonColor,
+                fontSize: labelFontSize,
+                fontWeight: FontWeight.bold))
         ],
       ));
 }
 
-Widget _raisedButtonNotIcon(double radius, String labelButton, Color color, OutlinedBorder shape, Function func){
+Widget _raisedButtonNotIcon(double radius, String labelButton, Color labelButtonColor, double labelFontSize, Color color, OutlinedBorder shape, Function func){
   return ElevatedButton(
       onPressed: func,
       style: ElevatedButton.styleFrom(
           shape: shape,
-          primary: color
+          primary: color,
+          elevation: 0.5
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             margin: EdgeInsets.only(left: 10.0),
-            child: Text(labelButton,
-                style: TextStyle(color: Colors.white, fontSize: 15.0)),
-          )
+            child: headerText(
+                texto: labelButton,
+                color: labelButtonColor,
+                fontSize: labelFontSize,
+                fontWeight: FontWeight.bold))
         ],
       )
   );
