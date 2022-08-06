@@ -3,7 +3,10 @@ import 'package:rapideli_market_app/src/colors/colors.dart';
 //import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
-Widget headerDoubleText({String textHeader, String textAction, Function func}){
+Widget headerDoubleText({
+  required String textHeader,
+  required String textAction,
+  Function()? func}){
   return Container(
     child: Row(
       children: [

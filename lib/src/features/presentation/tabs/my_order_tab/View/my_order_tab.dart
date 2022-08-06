@@ -7,7 +7,7 @@ import 'package:rapideli_market_app/src/features/presentation/commons_widgets/He
 import 'package:rapideli_market_app/src/features/presentation/tabs/my_order_tab/View/components/empty_Order_view.dart';
 
 class MyOrderTab extends StatefulWidget{
-  MyOrderTab({Key key}) : super(key: key);
+  MyOrderTab({Key? key}) : super(key: key);
 
   @override
   _MyOrderTabState createState ()=> _MyOrderTabState();

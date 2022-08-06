@@ -6,7 +6,7 @@ import 'package:rapideli_market_app/src/utils/styles/box_decoration_shadows.dart
 class AvatarView extends StatelessWidget {
   final String backgroundImage;
 
-  AvatarView({@required this.backgroundImage});
+  AvatarView({required this.backgroundImage});
 
   @override
   Widget build(BuildContext context) {

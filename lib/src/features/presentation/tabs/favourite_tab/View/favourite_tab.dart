@@ -4,7 +4,7 @@ import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Ca
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
 class FavouriteTab extends StatefulWidget{
-  FavouriteTab({Key key}) : super(key: key);
+  FavouriteTab({Key? key}) : super(key: key);
 
   @override
   FavouriteTabState createState ()=> FavouriteTabState();
@@ -30,6 +30,7 @@ class FavouriteTabState extends State<FavouriteTab>{
                     child: Column(
                       children: [
                         favouritesCard(
+                          context: context,
                           image: NetworkImage(
                               'https://jumbo.vtexassets.com/arquivos/ids/417442/Lechuga-escarola-un.jpg?v=637486512651670000'),
                           title: "Lechuga escarola",
@@ -41,6 +42,7 @@ class FavouriteTabState extends State<FavouriteTab>{
                           isFavourite: true,
                         ),
                         favouritesCard(
+                          context: context,
                           image: NetworkImage(
                               'https://jumbo.vtexassets.com/arquivos/ids/417442/Lechuga-escarola-un.jpg?v=637486512651670000'),
                           title: "Lechuga escarola",

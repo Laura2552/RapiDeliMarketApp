@@ -5,7 +5,7 @@ import 'package:rapideli_market_app/src/features/presentation/commons_widgets/He
 //import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
 class ProfileTab extends StatefulWidget{
-  ProfileTab({Key key}) : super(key: key);
+  ProfileTab({Key? key}) : super(key: key);
 
   @override
   _ProfileTabState createState() => _ProfileTabState();

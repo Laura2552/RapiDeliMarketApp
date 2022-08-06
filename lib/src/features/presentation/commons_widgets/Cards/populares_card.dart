@@ -3,18 +3,19 @@ import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 
 Widget popularesCard(
-    {BuildContext context,
+    {
+      required BuildContext context,
     double marginTop = 0.0,
     double marginRight = 0.0,
     double marginBottom = 0.0,
     double marginLeft = 10.0,
-    ImageProvider<Object> image,
-    String title,
-    String subtitle,
-    String review,
-    String ratings,
+      required ImageProvider<Object> image,
+      required String title,
+      required String subtitle,
+      required String review,
+      required String ratings,
     String buttonText = "",
-    bool hasActionButton}) {
+      required bool hasActionButton}) {
   return Column(children: [
     Container(
         margin: EdgeInsets.only(
@@ -81,6 +82,7 @@ Widget popularesCard(
                         height: 18.0,
                         child: hasActionButton
                             ? createButton(
+                                context: context,
                                 buttonColor: orange,
                                 labelButton: buttonText,
                                 labelFontSize: 11.0)
