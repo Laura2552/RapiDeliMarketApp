@@ -4,29 +4,37 @@ import 'package:rapideli_market_app/src/features/presentation/commons_widgets/He
 const shape = StadiumBorder();
 
 Widget createButton(
-    {BuildContext context,
+    {required BuildContext context,
     double width = 350.0,
     double height = 45.0,
     double radius = 20.0,
     bool isWithIcon = false,
-    ImageProvider<Object> icon,
-    String labelButton,
+    ImageProvider<Object>? icon,
+    required String labelButton,
       Color labelButtonColor = Colors.white,
       double labelFontSize = 15.0,
-    Color buttonColor,
+    Color buttonColor = Colors.blue,
       OutlinedBorder shape = shape,
-    Function func}) {
+    Function()? func}) {
   return Container(
       width: width,
       height: height,
       margin: EdgeInsets.only(top: 20.0),
       child: isWithIcon
-          ? _raisedButtonWithIcon(radius, icon, labelButton, labelButtonColor, labelFontSize, buttonColor, shape, func)
+          ? _raisedButtonWithIcon(radius, icon!, labelButton, labelButtonColor, labelFontSize, buttonColor, shape, func)
           : _raisedButtonNotIcon(radius, labelButton, labelButtonColor, labelFontSize, buttonColor, shape, func)
   );
 }
 
-Widget _raisedButtonWithIcon(double radius, ImageProvider<Object> icon, String labelButton, Color labelButtonColor, double labelFontSize, Color color, OutlinedBorder shape, Function func){
+Widget _raisedButtonWithIcon(
+    double radius,
+    ImageProvider<Object> icon,
+    String labelButton,
+    Color labelButtonColor,
+    double labelFontSize,
+    Color color,
+    OutlinedBorder shape,
+    Function()? func ) {
   return ElevatedButton(
       onPressed: func,
       style: ElevatedButton.styleFrom(
@@ -51,7 +59,7 @@ Widget _raisedButtonWithIcon(double radius, ImageProvider<Object> icon, String l
       ));
 }
 
-Widget _raisedButtonNotIcon(double radius, String labelButton, Color labelButtonColor, double labelFontSize, Color color, OutlinedBorder shape, Function func){
+Widget _raisedButtonNotIcon(double radius, String labelButton, Color labelButtonColor, double labelFontSize, Color color, OutlinedBorder shape, Function()? func){
   return ElevatedButton(
       onPressed: func,
       style: ElevatedButton.styleFrom(
@@ -62,7 +70,8 @@ Widget _raisedButtonNotIcon(double radius, String labelButton, Color labelButton
       child: Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(left: 10.0),
+            margin: EdgeInsets.only(right: 1.0),
+            padding: EdgeInsets.only(left: 2.0),
             child: headerText(
                 texto: labelButton,
                 color: labelButtonColor,

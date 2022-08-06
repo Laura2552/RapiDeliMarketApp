@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Cards/populares_card.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Cards/vertical_card.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_double.dart';
@@ -49,6 +48,7 @@ class SearchPage extends StatelessWidget {
                       textHeader: 'Recomendados para ti', textAction: ''),
                   SizedBox(height: 20.0),
                   popularesCard(
+                      context: context,
                       image: NetworkImage(
                           'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
                       title: "Tostitos Santa Elena",
@@ -57,6 +57,7 @@ class SearchPage extends StatelessWidget {
                       ratings: "(2 calificaciones)",
                       hasActionButton: false),
                   popularesCard(
+                      context: context,
                       image: NetworkImage(
                           'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
                       title: "Tostitos Santa Elena",
@@ -65,6 +66,7 @@ class SearchPage extends StatelessWidget {
                       ratings: "(2 calificaciones)",
                       hasActionButton: false),
                   popularesCard(
+                      context: context,
                       image: NetworkImage(
                           'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
                       title: "Tostitos Santa Elena",
@@ -103,26 +105,19 @@ Widget _searchInput(BuildContext context) {
 
 Widget _sliderRecentSearch() {
   return Container(
-    margin: EdgeInsets.only(top: 5.0),
-    height: 190.0,
-    child: Swiper(
-      itemCount: 4,
-      layout: SwiperLayout.DEFAULT,
-      itemBuilder: (BuildContext context, int index) {
-        return ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) {
-              return cardVertical(
-                context: context,
-                width: 160.0,
-                height: 120.0,
-                title: "Palomitas de maíz extra mantequilla",
-                subtitle: "RapiDeliMarket",
-                image: NetworkImage(
-                    'https://eliasacostaycia.com.co/wp-content/uploads/2020/02/ACT-II-Mantequilla-Extra.png'),
-              );
-            });
-      },
-    ),
-  );
+      margin: EdgeInsets.only(top: 5.0),
+      height: 190.0,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) {
+            return cardVertical(
+              context: context,
+              width: 160.0,
+              height: 120.0,
+              title: "Palomitas de maíz extra mantequilla",
+              subtitle: "RapiDeliMarket",
+              image: NetworkImage(
+                  'https://eliasacostaycia.com.co/wp-content/uploads/2020/02/ACT-II-Mantequilla-Extra.png'),
+            );
+          }));
 }

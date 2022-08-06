@@ -2,13 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Cards/populares_card.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
 class ExploreTab extends StatelessWidget {
-  const ExploreTab({Key key}) : super(key: key);
+  const ExploreTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +35,11 @@ class ExploreTab extends StatelessWidget {
                     height: 380,
                   ),
                   Wrap(
-                    children: [
-                      _infoPlace(),
-                      _infoPlaceStats()
-                    ],
+                    children: [_infoPlace(), _infoPlaceStats()],
                   )
                 ],
               ),
             ),
-
           ),
           SliverList(
               delegate: SliverChildListDelegate([
@@ -63,6 +57,7 @@ class ExploreTab extends StatelessWidget {
                   _sliderCards(),
                   _header(context, "Los mas populares hoy", "Ver mas"),
                   popularesCard(
+                      context: context,
                       image: NetworkImage(
                           'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
                       title: "Tostitos Santa Elena",
@@ -72,6 +67,7 @@ class ExploreTab extends StatelessWidget {
                       buttonText: "Envío",
                       hasActionButton: true),
                   popularesCard(
+                      context: context,
                       image: NetworkImage(
                           'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
                       title: "Tostitos Santa Elena",
@@ -81,6 +77,7 @@ class ExploreTab extends StatelessWidget {
                       buttonText: "Envío",
                       hasActionButton: true),
                   popularesCard(
+                      context: context,
                       image: NetworkImage(
                           'https://almacen.do/wp-content/uploads/2020/12/Chips-Tostitos-Santa-Elena_-15-oz-Front.jpg'),
                       title: "Tostitos Santa Elena",
@@ -135,19 +132,19 @@ Widget _infoPlace() {
 
 Widget _infoPlaceStats() {
   return Container(
-    margin: EdgeInsets.only(top : 60.0),
+    margin: EdgeInsets.only(top: 60.0),
     padding: EdgeInsets.symmetric(horizontal: 40.0),
     height: 70.0,
     decoration: BoxDecoration(
         border: Border(
             top: BorderSide(color: Colors.white),
-            bottom: BorderSide(color: Colors.white) ) ),
+            bottom: BorderSide(color: Colors.white))),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment. start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(children: [
               Icon(
@@ -155,20 +152,28 @@ Widget _infoPlaceStats() {
                 color: Colors.white,
                 size: 19.0,
               ),
-              headerText(texto: '  4.5', color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0)
+              headerText(
+                  texto: '  4.5',
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15.0)
             ]),
-            headerText(texto: '348 calificaciones', color: gris, fontWeight: FontWeight.w500, fontSize: 15.0)
+            headerText(
+                texto: '348 calificaciones',
+                color: gris,
+                fontWeight: FontWeight.w500,
+                fontSize: 15.0)
           ],
         ),
         Container(
           margin: EdgeInsets.only(right: 15.0),
-        height: 35,
-        decoration: BoxDecoration (
-            border: Border (right: BorderSide (color : Colors.white))) ,
+          height: 35,
+          decoration: BoxDecoration(
+              border: Border(right: BorderSide(color: Colors.white))),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment. start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(children: [
               Icon(
@@ -178,9 +183,17 @@ Widget _infoPlaceStats() {
               ),
               Container(
                   margin: EdgeInsets.only(right: 40.0),
-                  child: headerText(texto: '  300', color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0))
+                  child: headerText(
+                      texto: '  300',
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15.0))
             ]),
-            headerText(texto: 'Imágenes', color: gris, fontWeight: FontWeight.w500, fontSize: 15.0)
+            headerText(
+                texto: 'Imágenes',
+                color: gris,
+                fontWeight: FontWeight.w500,
+                fontSize: 15.0)
           ],
         ),
       ],
@@ -240,19 +253,12 @@ Widget _topBar(BuildContext context) {
 
 Widget _sliderCards() {
   return Container(
-    height: 350.0,
-    child: Swiper(
-      itemCount: 4,
-      layout: SwiperLayout.DEFAULT,
-      itemBuilder: (BuildContext context, int index) {
-        return ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) {
-              return _tarjeta(context);
-            });
-      },
-    ),
-  );
+      height: 350.0,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) {
+            return _tarjeta(context);
+          }));
 }
 
 Widget _tarjeta(BuildContext context) {
@@ -305,18 +311,6 @@ Widget _tarjeta(BuildContext context) {
                           color: gris,
                           fontWeight: FontWeight.w500,
                           fontSize: 13.0)),
-                  /*   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 75.0,
-                    height: 18.0,
-                    child: RaisedButton(
-                        elevation: 0.5,
-                        shape: StadiumBorder(),
-                        color: orange,
-                        textColor: Colors.white,
-                        onPressed: () {},
-                        child: Text('Enviar', style: TextStyle(fontSize: 11.0))),
-                  )*/
                 ],
               )
             ],
@@ -357,19 +351,12 @@ Widget _header(BuildContext context, String textHeader, String textAction) {
 
 Widget _sliderCollections() {
   return Container(
-    height: 300.0,
-    child: Swiper(
-      itemCount: 4,
-      layout: SwiperLayout.DEFAULT,
-      itemBuilder: (BuildContext context, int index) {
-        return ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) {
-              return _tarjetaCollection(context);
-            });
-      },
-    ),
-  );
+      height: 300.0,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) {
+            return _tarjetaCollection(context);
+          }));
 }
 
 Widget _tarjetaCollection(BuildContext context) {

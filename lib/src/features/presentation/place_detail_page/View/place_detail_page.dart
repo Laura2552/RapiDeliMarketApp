@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
-import 'package:rapideli_market_app/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_double.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
@@ -10,32 +8,33 @@ class PlaceDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton.extended(
-          onPressed: (){},
-          backgroundColor: orange,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          label: headerText(
-              texto: 'Agregar al carrito 570 pesos',
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontSize: 17)),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton.extended(
+            onPressed: () {},
+            backgroundColor: orange,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            label: headerText(
+                texto: 'Agregar al carrito RD\$570',
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontSize: 17)),
         body: CustomScrollView(slivers: <Widget>[
           SliverList(
-           delegate: SliverChildListDelegate([
-           Container(
-            padding: EdgeInsets.symmetric(horizontal: 4, vertical: 20),
-            child: Column(children: [
-              _headers(texto: 'Populares'),
-              _sliderCards(),
-              _headers(texto: 'Todas las categorías'),
-              _menuList(context),
-              SizedBox(height: 40.0)
+            delegate: SliverChildListDelegate([
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 4, vertical: 20),
+                child: Column(children: [
+                  _headers(texto: 'Populares'),
+                  _sliderCards(),
+                  _headers(texto: 'Todas las categorías'),
+                  _menuList(context),
+                  SizedBox(height: 40.0)
+                ]),
+              )
             ]),
           )
-        ]),
-      )
-    ]));
+        ]));
   }
 }
 
@@ -49,17 +48,10 @@ Widget _headers({texto: String}) {
 Widget _sliderCards() {
   return Container(
       height: 290.0,
-      /*margin: EdgeInsets.symmetric(vertical: 30.0),
-      padding: EdgeInsets.symmetric(horizontal: 20),*/
-      child: Swiper(
-          itemCount: 4,
-          layout: SwiperLayout.DEFAULT,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) {
-            return ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) {
-                  return _cards();
-                });
+            return _cards();
           }));
 }
 
@@ -86,7 +78,7 @@ Widget _cards() {
             //  alignment: Alignment.centerLeft,
             padding: EdgeInsets.only(right: 80.0),
             child: headerText(
-                texto: "180 pesos",
+                texto: "RD\$180",
                 fontWeight: FontWeight.w500,
                 fontSize: 14.0,
                 color: gris)),
@@ -111,7 +103,7 @@ Widget _cards() {
       ]));
 }
 
-Widget _menuList(BuildContext context){
+Widget _menuList(BuildContext context) {
   return Container(
     padding: EdgeInsets.only(left: 10.0),
     child: Column(
@@ -127,9 +119,7 @@ Widget _menuList(BuildContext context){
 
 Widget _menuItem(BuildContext context, String texto, String itemCount) {
   return Container(
-    decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: gris))
-    ),
+    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: gris))),
     child: Column(
       children: [
         ListTile(

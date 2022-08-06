@@ -8,7 +8,7 @@ import 'package:rapideli_market_app/src/features/presentation/tabs/my_order_tab/
 import 'package:rapideli_market_app/src/features/presentation/tabs/profile_tab/View/profile_tab.dart';
 
 class TabsPage extends StatefulWidget {
-  TabsPage({Key key}) : super(key: key);
+  TabsPage({Key? key}) : super(key: key);
 
   @override
   _TabsPageState createState() => _TabsPageState();
@@ -71,6 +71,6 @@ class _TabsPageState extends State<TabsPage> {
         'Habilitar su  ubicación',
         'Por favor permita el uso de su ubicacion para el envío',
         createButton(
-            buttonColor: orange, labelButton: "Habilitar ubicación", func: () {}));
+            context: context, buttonColor: orange, labelButton: "Habilitar ubicación", func: () {}));
   }
 }

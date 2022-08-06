@@ -46,12 +46,14 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
           SliverList(delegate: SliverChildListDelegate(
             [
               Container(
-                margin: EdgeInsets.only(top: screenHeight.getScreenHeigth(
-                    context: context, multiplier: 0.1),
-                    left: 15, right: 15),
+                margin: EdgeInsets.only(
+                    top: getScreenHeight(
+                        context: context, multiplier: 0.1),
+                    left: 15,
+                    right: 15),
                 decoration: createBoxDecorationWithShadows(),
-                width: screenWidth.getScreenWidth(context: context),
-                height: screenHeight.getScreenHeigth(
+                width: getScreenWidth(context: context),
+                height: getScreenHeight(
                     context: context, multiplier: 0.75),
                 child: Column(
                   children: [

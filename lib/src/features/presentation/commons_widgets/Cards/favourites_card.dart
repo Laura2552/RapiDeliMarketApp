@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
 import 'package:rapideli_market_app/src/colors/colors.dart';
-//import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:rapideli_market_app/src/utils/styles/box_decoration_shadows.dart';
 
 Widget favouritesCard(
-    {BuildContext context,
+    {
+      required BuildContext context,
     double marginTop = 10.0,
     double marginRight = 10.0,
     double marginBottom = 0.0,
     double marginLeft = 10.0,
-    ImageProvider<Object> image,
-    String title,
-    String subtitle,
-    String review,
-    String ratings,
+      required ImageProvider<Object> image,
+      required String title ,
+      required  String subtitle,
+      required  String review,
+      required  String ratings,
     String buttonText = '',
-    bool hasActionButton,
+      required   bool hasActionButton,
     bool isFavourite = true}) {
   return Container(
     margin: EdgeInsets.only(

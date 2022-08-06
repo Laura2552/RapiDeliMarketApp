@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
-//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:rapideli_market_app/src/features/presentation/filter_page/View/components/categories_filters.dart';
 import 'package:rapideli_market_app/src/features/presentation/filter_page/View/components/list_tile_checked.dart';
 
 class FilterPage extends StatefulWidget {
-  FilterPage({Key key}) : super(key: key);
+  FilterPage({Key? key}) : super(key: key);
 
   @override
   FilterPageState createState() => FilterPageState();
@@ -42,7 +41,7 @@ class FilterPageState extends State<FilterPage> {
                     ),
                   ),
                   Container(
-                      padding: EdgeInsets.symmetric(horizontal: 15.0),
+                      padding: EdgeInsets.only(left: 20.0),
                       child: CategoriesFilter()),
                   Container(
                       alignment: Alignment.centerLeft,
@@ -133,7 +132,7 @@ class FilterPageState extends State<FilterPage> {
   }
 }
 
-Widget _appBar(BuildContext context) {
+PreferredSizeWidget _appBar(BuildContext context) {
   return AppBar(
     elevation: 0.5,
     backgroundColor: Colors.white,

@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:rapideli_market_app/src/colors/colors.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
-//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
-//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
-//import 'file:///C:/rapi_delimarket/rapideli_market_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:rapideli_market_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
@@ -41,6 +38,7 @@ class ForgotPassword extends StatelessWidget {
               ),
               _emailInput(),
               createButton(
+                context: context,
                 buttonColor: orange,
                 shape: StadiumBorder(),
                 labelButton: 'Enviar',
@@ -76,6 +74,7 @@ void _showAlerta(BuildContext context) {
     'Tu contraseña ha sido restaurada',
     'En poco tiempo recibiras un email con un codigo para configurar tu nueva contraseña.',
     createButton(
+        context: context,
         labelButton: 'Aceptar',
         buttonColor: orange,
         shape: StadiumBorder(),

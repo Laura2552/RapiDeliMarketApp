@@ -54,6 +54,7 @@ class CollectionDetailPage extends StatelessWidget {
                   Column(
                     children: [
                       favouritesCard(
+                        context: context,
                         image: NetworkImage(
                             'https://jumbo.vtexassets.com/arquivos/ids/417442/Lechuga-escarola-un.jpg?v=637486512651670000'),
                         title: "Lechuga escarola",
@@ -65,6 +66,7 @@ class CollectionDetailPage extends StatelessWidget {
                         isFavourite: true,
                       ),
                       favouritesCard(
+                        context: context,
                         image: NetworkImage(
                             'https://jumbo.vtexassets.com/arquivos/ids/417442/Lechuga-escarola-un.jpg?v=637486512651670000'),
                         title: "Lechuga escarola",
