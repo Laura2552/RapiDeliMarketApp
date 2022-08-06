@@ -7,6 +7,8 @@ class TextFieldsProfileDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(5),
+      padding: EdgeInsets.symmetric(vertical: 5) ,
       child: Column(
         children: [
           _createTextFieldUsername(context),
@@ -47,7 +49,7 @@ Widget _createTextFieldEmail(BuildContext context) {
       title: TextField(
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-            hintText: 'Nombre de suario',
+            hintText: 'Nombre de usuario',
             border: OutlineInputBorder(borderSide: BorderSide.none)),
       ),
     ),
